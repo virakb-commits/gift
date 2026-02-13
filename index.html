@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Gift For You</title>
+    <link href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Chilanka', 'Comic Sans MS', cursive; background-color: #fdf5f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; text-align: center; }
+        .card { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); max-width: 400px; }
+        h1 { color: #d63384; font-size: 2.5rem; margin-bottom: 10px; }
+        .btn { padding: 10px 20px; font-size: 1.2rem; cursor: pointer; border: none; border-radius: 50%; margin: 10px; transition: 0.3s; }
+        .yes { background-color: #ff4d6d; color: white; }
+        .no { background-color: #ddd; color: #555; }
+        .hidden { display: none; }
+        .letter { font-size: 1rem; color: #333; line-height: 1.6; text-align: left; }
+        video { width: 150px; }
+    </style>
+
+</head>
+<body>
+
+    <div id="screen1" class="card">
+        <video src="IMG_7771.MP4" autoplay muted playsinline loop style="width: 100%; max-width: 200px;"></video>
+        <h1>HEY BABY!</h1>
+        <p>Would you like to see your gift?</p>
+        <button class="no" onclick="goNo()">✖</button>
+        <button class="yes" onclick="goYes()">✔</button>
+    </div>
+
+    <div id="screen2" class="card hidden">
+        <video src="IMG_7771.MP4" autoplay muted playsinline loop style="width: 100%; max-width: 200px;"></video>
+        <h1>AW PLEASE?</h1>
+        <p>I prepared this gift for you...</p>
+        <button class="yes" onclick="goYes()">⬅ Back to Yes</button>
+    </div>
+
+    <div id="screen3" class="card hidden">
+        <h2 style="color:#ff4d6d;">Flowers for you</h2>
+        <div style="font-size: 50px;">🌹🌹🌹</div>
+        <p>Click the letter!</p>
+        <div onclick="showLetter()" style="cursor:pointer; font-size: 40px;">✉️</div>
+        
+        <div id="finalLetter" class="hidden">
+            <hr>
+            <h3>Happy Monthsary, My Love!</h3>
+            <p class="letter">
+                I can't believe how fast time has flown. Every moment with you feels so special... 
+                i'm sorry for everything!, I know I wasn't the best boyfriend, but I promise to be better for you in  the future. I can't say how much I love you and I hope this little thing that bring your smile on your face.
+            </p>
+            <p>For you my love<br><b>Ing</b></p>
+        </div>
+    </div>
+
+    <script>
+        function goNo() {
+            document.getElementById('screen1').classList.add('hidden');
+            document.getElementById('screen2').classList.remove('hidden');
+        }
+        function goYes() {
+            document.getElementById('screen1').classList.add('hidden');
+            document.getElementById('screen2').classList.add('hidden');
+            document.getElementById('screen3').classList.remove('hidden');
+        }
+        function showLetter() {
+            document.getElementById('finalLetter').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
